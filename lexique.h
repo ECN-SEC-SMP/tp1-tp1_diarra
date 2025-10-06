@@ -5,16 +5,17 @@
 #include <string>
 #include <iostream>
 using namespace std;
+#include <map>
 
 #include "utilitaire.hpp"
+
 class Lexique {
     private:
-
     string nom_fichier;
-    int nb_occurence;
+/*     map<string, int> content; */
+    map<string, int> nb_occurence;
 
     public:
-
     //Constructeur
     Lexique();
     Lexique(string nom_fichier);
