@@ -19,12 +19,21 @@ class Lexique {
     //Constructeur
     Lexique();
     Lexique(string nom_fichier);
+
+    // Getters
+    string get_nom_fichier();
+    int get_nb_occurence();
+
+    // Setters
+    void setNomFichier(const string& nom_fichier);
+    void setNbOccurence(const map<string, int>& nouveau_map);
     
     //Methodes
-    void save_lexique(string nom_fichier);
-    bool test_presence(string mot);
-    int delete_mot(string mot);
-    void display();
+    void save_lexique(const std::string& nom_fichier) const;
+    bool test_presence(const std::string& mot) const;
+    int delete_mot(const std::string& mot);
+    void display(void) const;
+    void load_lexique();
 
     //Destructeur
     ~Lexique();
