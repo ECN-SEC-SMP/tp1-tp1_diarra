@@ -175,6 +175,16 @@ void Lexique::display() const
     }
 }
 
+/**
+ * @brief Surcharge de l'opérateur << pour afficher le contenu d'un lexique.
+ * 
+ * Affiche chaque mot du lexique et son nombre d'occurrences sur le flux
+ * de sortie spécifié. Si le lexique est vide, un message l'indique.
+ * 
+ * @param os Flux de sortie (ex: std::cout, std::ofstream, etc.)
+ * @param lex Le lexique à afficher.
+ * @return Référence vers le flux de sortie.
+ */
 std::ostream &operator<<(std::ostream &os, const Lexique &lex) {
     if (lex.nb_occurence.empty()) {
         os << "Le lexique est vide." << std::endl;
@@ -188,6 +198,18 @@ std::ostream &operator<<(std::ostream &os, const Lexique &lex) {
     return os;
 }
 
+/**
+ * @brief Surcharge de l'opérateur += pour fusionner deux lexiques.
+ * 
+ * Pour chaque mot du lexique passé en paramètre, cette méthode ajoute le mot
+ * dans le lexique courant et cumule les occurrences si le mot existe déjà.
+ * 
+ * Après cette opération, lex1 contiendra tous les mots des deux lexiques, 
+ * avec des occurrences additionnées.
+ * 
+ * @param autre Le second lexique à fusionner.
+ * @return Référence vers le lexique courant (après fusion).
+ */
 Lexique &Lexique::operator+=(const Lexique &autre) {
     for (const auto &[mot, occ] : autre.nb_occurence) {
         this->nb_occurence[mot] += occ;
@@ -195,6 +217,17 @@ Lexique &Lexique::operator+=(const Lexique &autre) {
     return *this;
 }
 
+/**
+ * @brief Surcharge de l'opérateur -= pour effectuer la différence entre deux lexiques.
+ * 
+ * Supprime du lexique courant tous les mots qui sont également présents
+ * dans le lexique passé en paramètre.
+ * 
+ * Après cette opération, lex1 ne contiendra que les mots qui n'étaient pas dans lex2.
+ * 
+ * @param autre Le lexique dont les mots doivent être retirés.
+ * @return Référence vers le lexique courant (après suppression).
+ */
 Lexique &Lexique::operator-=(const Lexique &autre) {
     for (const auto &[mot, _] : autre.nb_occurence) {
         this->nb_occurence.erase(mot);
@@ -209,15 +242,14 @@ Lexique::~Lexique()
 }
 
 int main(){
-    Lexique lex("lesMiserables_A.txt");
-    Lexique lex1("fichier test_2");
-    Lexique lex2("fichier test");
-    lex2.load_lexique();
-    lex2.save_lexique("fichier test.txt");
+    Lexique lex1("test1.txt");
+    Lexique lex2("test2.txt");
     lex1.load_lexique();
-    lex1.save_lexique("fichier test_2.txt");
+    lex1.save_lexique("fichier test_1.txt");
+    lex2.load_lexique();
+    lex2.save_lexique("fichier test_2.txt");
 
-    lex2 -= lex1;
-
-    lex2.save_lexique("fichier test.txt");
+    cout << "=== Différence lex1 -= lex2 ===" << endl;
+    lex1 -= lex2;  // Suppression des mots communs
+    cout << lex1 << endl;
 }
