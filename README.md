@@ -35,6 +35,10 @@ TP1-Lexique:
 - README.md # Présent document comportant aussi le diagramme de classe
 - Les fichiers de tests
 
+### Pour le prof
+Nous nous sommes réparties les taches de la manière dont le tp est défini. C'est-à-dire, en deux partie. En conséquence, nous avons travaillé sur deux branches de développement différentes.
+Pour visualiser la première partie, veuillez-vous reférer à la branche: Branche_Diarra et pour la deuxième partie, regarder le dernier commit sur la branche: Eugénie.
+
 ## 🧱 Diagramme de classe de la classe Lexique
 <img width="535" height="604" alt="image" src="https://github.com/user-attachments/assets/d4cfa568-4a10-4928-853f-1ca7cac8d5b7" /> <img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/9a014b0c-a33d-4163-a646-1c15b211799d" />
 
@@ -71,6 +75,7 @@ PS: il faut changer le chemin du fichier source dans le makefile.
 ./monprog
 ```
 
+
 ## 📘 Auteurs
 
 ### Noms : Mame Diarra DIOP & Eugénie Roquain;
@@ -78,4 +83,5 @@ PS: il faut changer le chemin du fichier source dans le makefile.
 ### Université : Ecole Centrale de Nantes;
 
 📅 TP réalisé en octobre 2025
+
 
