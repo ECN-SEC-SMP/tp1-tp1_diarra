@@ -27,6 +27,9 @@ class Lexique {
     // Setters
     void setNomFichier(const string& nom_fichier);
     void setNbOccurence(const map<string, int>& nouveau_map);
+
+    // Fonctions amis
+    friend std::ostream &operator<<(std::ostream &os, const Lexique &lex);
     
     //Methodes
     void save_lexique(const std::string& nom_fichier) const;
@@ -34,6 +37,8 @@ class Lexique {
     int delete_mot(const std::string& mot);
     void display(void) const;
     void load_lexique();
+    Lexique &operator+=(const Lexique &autre);
+    Lexique &operator-=(const Lexique &autre);
 
     //Destructeur
     ~Lexique();
