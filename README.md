@@ -36,18 +36,20 @@ TP1-Lexique:
 - Les fichiers de tests
 
 ## 🧱 Diagramme de classe de la classe Lexique
-<img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/9a014b0c-a33d-4163-a646-1c15b211799d" />
+<img width="535" height="604" alt="image" src="https://github.com/user-attachments/assets/d4cfa568-4a10-4928-853f-1ca7cac8d5b7" /> <img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/9a014b0c-a33d-4163-a646-1c15b211799d" />
+
+
 
 
 ## 🧪 Tests réalisés
 
-✅Création d'instances de la classe ;
+✅ Création d'instances de la classe ;
 ✅ Chargement d’un fichier texte réel ;
 ✅ Suppression de mots existants et inexistants ;
 ✅ Gestion d’un fichier vide ou inexistant ;
 ✅ Sauvegarde du lexique et vérification du contenu généré ;
-✅Affichage du contenu du lexique ;
-✅Fonctionnement structure map ;
+✅ Affichage du contenu du lexique ;
+✅ Fonctionnement structure map ;
 
 
 ---
@@ -76,3 +78,4 @@ PS: il faut changer le chemin du fichier source dans le makefile.
 ### Université : Ecole Centrale de Nantes;
 
 📅 TP réalisé en octobre 2025
+
